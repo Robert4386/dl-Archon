@@ -101,12 +101,6 @@ def run_bot():
     bot.infinity_polling()
 
 if __name__ == "__main__":
-    # Проверка .env файла
-    if not os.path.exists('.env'):
-        with open('.env', 'w') as f:
-            f.write('TELEGRAM_BOT_TOKEN=ваш_токен_здесь\n')
-        print("ℹ️ Создан файл .env - добавьте в него токен бота!")
-        exit()
 
     # Запуск в отдельном потоке
     bot_thread = threading.Thread(target=run_bot, daemon=True)
